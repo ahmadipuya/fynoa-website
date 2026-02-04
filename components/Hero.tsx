@@ -49,3 +49,4 @@ export function Hero() {
     </div>
   );
 }
+
