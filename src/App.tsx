@@ -1,14 +1,13 @@
-import { useState } from 'react';
-import Hero from './components/Hero.tsx';
-import { Problem } from './components/Problem.tsx';
-import { Solution } from './components/Solution.tsx';
-import Features from './components/Features.tsx';
-import { Market } from './components/Market.tsx';
-import { Strategy } from './components/Strategy.tsx';
-import Team from './components/Team.tsx';
-import Investment from './components/Investment.tsx';
-import { Contact } from './components/Contact.tsx';
-import Footer from './components/Footer.tsx';
+import Hero from './components/Hero';
+import Problem from './components/Problem';
+import Solution from './components/Solution';
+import Features from './components/Features';
+import Market from './components/Market';
+import Strategy from './components/Strategy';
+import Team from './components/Team';
+import Investment from './components/Investment';
+import Contact from './components/Contact';
+import Footer from './components/Footer';
 
 function App() {
   const [language, setLanguage] = useState<'fr' | 'en'>('fr');
