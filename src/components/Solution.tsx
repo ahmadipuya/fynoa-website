@@ -1,6 +1,5 @@
 import { useLanguage } from './LanguageContext';
 import { MessageSquare, Fingerprint, Smartphone, Zap, Brain, Shield } from 'lucide-react';
-import { motion } from 'motion/react';
 
 export function Solution() {
   const { language } = useLanguage();
@@ -104,34 +103,21 @@ export function Solution() {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 z-10">
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-20"
-        >
+        <div className="text-center mb-20">
           <h2 className="text-5xl sm:text-6xl font-black mb-6 bg-gradient-to-r from-sky-400 via-emerald-400 to-sky-400 bg-clip-text text-transparent">
             {t.title}
           </h2>
           <p className="text-xl text-slate-300 max-w-3xl mx-auto">
             {t.subtitle}
           </p>
-        </motion.div>
+        </div>
 
         {/* Features Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {t.features.map((feature, index) => {
             const Icon = feature.icon;
             return (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="group"
-              >
+              <div key={index} className="group">
                 <div className="relative h-full p-8 bg-gradient-to-br from-slate-800/50 to-slate-900/50 border border-slate-700/50 rounded-3xl backdrop-blur-sm hover:border-sky-500/50 transition-all duration-300 overflow-hidden">
                   {/* Gradient Overlay on Hover */}
                   <div className={`absolute inset-0 bg-gradient-to-br ${feature.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}></div>
@@ -151,7 +137,7 @@ export function Solution() {
                     </p>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             );
           })}
         </div>

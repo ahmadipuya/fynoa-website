@@ -1,133 +1,115 @@
 import { useLanguage } from './LanguageContext';
-import { Rocket, Users, Globe2, TrendingUp, CheckCircle } from 'lucide-react';
+import { Rocket, Users, Globe, TrendingUp } from 'lucide-react';
 
 export function Strategy() {
   const { language } = useLanguage();
 
   const content = {
     fr: {
-      title: "Stratégie de Croissance",
-      subtitle: "Un plan ambitieux pour conquérir le marché européen",
+      title: "Stratégie Go-to-Market",
+      subtitle: "Un plan en trois phases pour conquérir le marché",
       phases: [
         {
           phase: "Phase 1",
-          title: "Lancement MVP",
-          timeline: "Q1 2025",
+          timeline: "Mois 1-6",
+          title: "Lancement France",
           icon: Rocket,
-          objectives: [
-            "Développement de la plateforme core",
-            "Intégration de l'IA conversationnelle",
-            "Authentification biométrique",
-            "Beta test avec 1000 utilisateurs"
+          color: "from-blue-500 to-cyan-500",
+          goals: [
+            "Lancement beta avec 1000 early adopters",
+            "Partenariats avec influenceurs Gen Z",
+            "Campagne marketing sur TikTok et Instagram",
+            "Obtention des premières licences"
           ]
         },
         {
           phase: "Phase 2",
-          title: "Expansion France",
-          timeline: "Q2-Q4 2025",
+          timeline: "Mois 7-12",
+          title: "Croissance Nationale",
           icon: Users,
-          objectives: [
-            "Lancement public en France",
+          color: "from-purple-500 to-pink-500",
+          goals: [
+            "50 000 utilisateurs actifs",
             "Partenariats avec universités",
-            "100K utilisateurs actifs",
-            "Monétisation premium"
+            "Programme de parrainage viral",
+            "Levée de fonds Series A"
           ]
         },
         {
           phase: "Phase 3",
-          title: "Europe",
-          timeline: "2026",
-          icon: Globe2,
-          objectives: [
-            "Expansion Allemagne, Espagne, Italie",
-            "Localisation multilingue",
-            "1M+ utilisateurs",
-            "Série A fundraising"
-          ]
-        },
-        {
-          phase: "Phase 4",
-          title: "Leadership",
-          timeline: "2027+",
-          icon: TrendingUp,
-          objectives: [
-            "Leader européen fintech Gen Z",
-            "10M+ utilisateurs",
-            "Rentabilité opérationnelle",
-            "Innovation continue IA"
+          timeline: "Année 2+",
+          title: "Expansion Européenne",
+          icon: Globe,
+          color: "from-emerald-500 to-teal-500",
+          goals: [
+            "Expansion en Allemagne et Espagne",
+            "500 000+ utilisateurs",
+            "Nouvelles fonctionnalités (crypto, investissement)",
+            "Rentabilité opérationnelle"
           ]
         }
       ],
-      businessModel: {
-        title: "Modèle de Revenus",
-        streams: [
-          "Abonnement Premium: €4.99/mois - Fonctionnalités IA avancées",
-          "Interchange fees: Commission sur transactions",
-          "Partenariats: Offres exclusives brands Gen Z",
-          "API Platform: Services B2B pour entreprises"
+      metrics: {
+        title: "Métriques Clés",
+        items: [
+          { label: "CAC Target", value: "€15" },
+          { label: "LTV Target", value: "€450" },
+          { label: "Ratio LTV/CAC", value: "30x" },
+          { label: "Taux de rétention M6", value: "75%" }
         ]
       }
     },
     en: {
-      title: "Growth Strategy",
-      subtitle: "An ambitious plan to conquer the European market",
+      title: "Go-to-Market Strategy",
+      subtitle: "A three-phase plan to conquer the market",
       phases: [
         {
           phase: "Phase 1",
-          title: "MVP Launch",
-          timeline: "Q1 2025",
+          timeline: "Months 1-6",
+          title: "France Launch",
           icon: Rocket,
-          objectives: [
-            "Core platform development",
-            "Conversational AI integration",
-            "Biometric authentication",
-            "Beta test with 1000 users"
+          color: "from-blue-500 to-cyan-500",
+          goals: [
+            "Beta launch with 1000 early adopters",
+            "Partnerships with Gen Z influencers",
+            "Marketing campaign on TikTok and Instagram",
+            "First licenses obtained"
           ]
         },
         {
           phase: "Phase 2",
-          title: "France Expansion",
-          timeline: "Q2-Q4 2025",
+          timeline: "Months 7-12",
+          title: "National Growth",
           icon: Users,
-          objectives: [
-            "Public launch in France",
+          color: "from-purple-500 to-pink-500",
+          goals: [
+            "50,000 active users",
             "University partnerships",
-            "100K active users",
-            "Premium monetization"
-          ]
-        },
-        {
-          phase: "Phase 3",
-          title: "Europe",
-          timeline: "2026",
-          icon: Globe2,
-          objectives: [
-            "Expansion Germany, Spain, Italy",
-            "Multilingual localization",
-            "1M+ users",
+            "Viral referral program",
             "Series A fundraising"
           ]
         },
         {
-          phase: "Phase 4",
-          title: "Leadership",
-          timeline: "2027+",
-          icon: TrendingUp,
-          objectives: [
-            "European Gen Z fintech leader",
-            "10M+ users",
-            "Operational profitability",
-            "Continuous AI innovation"
+          phase: "Phase 3",
+          timeline: "Year 2+",
+          title: "European Expansion",
+          icon: Globe,
+          color: "from-emerald-500 to-teal-500",
+          goals: [
+            "Expansion to Germany and Spain",
+            "500,000+ users",
+            "New features (crypto, investing)",
+            "Operational profitability"
           ]
         }
       ],
-      businessModel: {
-        title: "Revenue Model",
-        streams: [
-          "Premium Subscription: €4.99/month - Advanced AI features",
-          "Interchange fees: Transaction commissions",
-          "Partnerships: Exclusive Gen Z brand offers",
-          "API Platform: B2B services for companies"
+      metrics: {
+        title: "Key Metrics",
+        items: [
+          { label: "CAC Target", value: "€15" },
+          { label: "LTV Target", value: "€450" },
+          { label: "LTV/CAC Ratio", value: "30x" },
+          { label: "M6 Retention Rate", value: "75%" }
         ]
       }
     }
@@ -136,11 +118,11 @@ export function Strategy() {
   const t = content[language];
 
   return (
-    <section id="strategy" className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-950 via-purple-950 to-slate-950 overflow-hidden">
-      {/* Background Effects */}
+    <section id="strategy" className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-purple-950 via-indigo-950 to-purple-950 overflow-hidden">
+      {/* Animated Background */}
       <div className="absolute inset-0">
-        <div className="absolute top-1/3 left-1/3 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/3 right-1/3 w-96 h-96 bg-pink-500/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-1/3 left-1/4 w-96 h-96 bg-pink-500/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 z-10">
@@ -154,79 +136,62 @@ export function Strategy() {
           </p>
         </div>
 
-        {/* Timeline */}
-        <div className="relative mb-20">
-          {/* Vertical Line */}
-          <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-purple-500 via-pink-500 to-purple-500 hidden lg:block"></div>
-
-          <div className="space-y-16">
-            {t.phases.map((phase, index) => {
-              const Icon = phase.icon;
-              const isEven = index % 2 === 0;
-              
-              return (
-                <div
-                  key={index}
-                  className={`relative flex items-center ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} flex-col gap-8`}
-                >
-                  {/* Content Card */}
-                  <div className="lg:w-5/12 w-full">
-                    <div className="p-8 bg-gradient-to-br from-purple-900/50 to-pink-900/50 border border-purple-500/30 rounded-3xl backdrop-blur-sm hover:border-purple-400/50 transition-all duration-300">
-                      <div className="flex items-center gap-4 mb-4">
-                        <div className="p-3 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl shadow-lg shadow-purple-500/50">
-                          <Icon className="w-6 h-6 text-white" />
-                        </div>
-                        <div>
-                          <div className="text-sm text-purple-300 font-semibold">{phase.phase}</div>
-                          <div className="text-2xl font-bold text-white">{phase.title}</div>
-                        </div>
-                      </div>
-                      
-                      <div className="inline-block px-4 py-1 bg-purple-500/20 border border-purple-500/30 rounded-full text-purple-300 text-sm font-semibold mb-4">
-                        {phase.timeline}
-                      </div>
-
-                      <div className="space-y-3">
-                        {phase.objectives.map((objective, idx) => (
-                          <div key={idx} className="flex items-start gap-3">
-                            <CheckCircle className="w-5 h-5 text-purple-400 flex-shrink-0 mt-0.5" />
-                            <span className="text-slate-300">{objective}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
+        {/* Phases */}
+        <div className="grid md:grid-cols-3 gap-8 mb-20">
+          {t.phases.map((item, index) => {
+            const Icon = item.icon;
+            return (
+              <div key={index} className="group">
+                <div className="relative h-full p-8 bg-gradient-to-br from-slate-900/50 to-slate-800/30 border border-purple-500/20 rounded-3xl backdrop-blur-sm hover:border-purple-400/40 transition-all duration-300">
+                  {/* Phase Number Badge */}
+                  <div className={`absolute -top-4 -right-4 px-6 py-3 bg-gradient-to-r ${item.color} rounded-2xl shadow-xl transform group-hover:scale-110 transition-transform duration-300`}>
+                    <span className="text-sm font-black text-white">{item.phase}</span>
                   </div>
 
-                  {/* Center Circle (Desktop) */}
-                  <div className="hidden lg:flex absolute left-1/2 -translate-x-1/2 w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full items-center justify-center shadow-xl shadow-purple-500/50 border-4 border-slate-950">
-                    <div className="text-2xl font-black text-white">{index + 1}</div>
+                  {/* Icon */}
+                  <div className={`mb-6 inline-flex p-4 bg-gradient-to-br ${item.color} rounded-2xl shadow-lg`}>
+                    <Icon className="w-8 h-8 text-white" />
                   </div>
 
-                  {/* Spacer */}
-                  <div className="lg:w-5/12 hidden lg:block"></div>
+                  {/* Timeline */}
+                  <div className="text-sm text-purple-300 font-semibold mb-2">
+                    {item.timeline}
+                  </div>
+
+                  {/* Title */}
+                  <h3 className="text-2xl font-bold text-white mb-6">
+                    {item.title}
+                  </h3>
+
+                  {/* Goals */}
+                  <ul className="space-y-3">
+                    {item.goals.map((goal, i) => (
+                      <li key={i} className="flex items-start gap-3">
+                        <TrendingUp className="w-4 h-4 text-purple-400 flex-shrink-0 mt-1" />
+                        <span className="text-slate-300 text-sm leading-relaxed">{goal}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-              );
-            })}
-          </div>
+              </div>
+            );
+          })}
         </div>
 
-        {/* Business Model */}
-        <div
-          className="relative p-12 bg-gradient-to-br from-purple-900/30 to-pink-900/30 border border-purple-500/30 rounded-3xl backdrop-blur-sm"
-        >
+        {/* Metrics */}
+        <div className="relative p-10 bg-gradient-to-br from-purple-900/30 to-pink-900/30 border border-purple-500/30 rounded-3xl backdrop-blur-sm">
           <h3 className="text-3xl font-bold text-white mb-8 text-center">
-            {t.businessModel.title}
+            {t.metrics.title}
           </h3>
           
-          <div className="grid md:grid-cols-2 gap-6">
-            {t.businessModel.streams.map((stream, index) => (
-              <div
-                key={index}
-                className="p-6 bg-gradient-to-br from-purple-800/30 to-pink-800/30 border border-purple-500/20 rounded-2xl"
-              >
-                <div className="flex items-start gap-3">
-                  <div className="flex-shrink-0 w-2 h-2 mt-2 bg-gradient-to-br from-purple-400 to-pink-400 rounded-full"></div>
-                  <p className="text-slate-300 leading-relaxed">{stream}</p>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {t.metrics.items.map((metric, index) => (
+              <div key={index} className="text-center">
+                <div className="text-4xl font-black bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent mb-2">
+                  {metric.value}
+                </div>
+                <div className="text-slate-400 text-sm">
+                  {metric.label}
                 </div>
               </div>
             ))}
