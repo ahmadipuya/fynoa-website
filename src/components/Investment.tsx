@@ -1,6 +1,5 @@
 import { useLanguage } from './LanguageContext';
 import { TrendingUp, DollarSign, Target, Download, CheckCircle } from 'lucide-react';
-import { motion } from 'motion/react';
 
 export function Investment() {
   const { language } = useLanguage();
@@ -99,11 +98,11 @@ export function Investment() {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 z-10">
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+        <div
+         
+         
+         
+         
           className="text-center mb-20"
         >
           <h2 className="text-5xl sm:text-6xl font-black mb-6 bg-gradient-to-r from-emerald-400 via-teal-400 to-emerald-400 bg-clip-text text-transparent">
@@ -112,15 +111,15 @@ export function Investment() {
           <p className="text-xl text-slate-300 max-w-3xl mx-auto">
             {t.subtitle}
           </p>
-        </motion.div>
+        </div>
 
         <div className="grid lg:grid-cols-2 gap-12 mb-16">
           {/* Fundraising Card */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+          <div
+           
+           
+           
+           
             className="relative p-10 bg-gradient-to-br from-emerald-900/50 to-teal-900/50 border border-emerald-500/30 rounded-3xl backdrop-blur-sm overflow-hidden"
           >
             {/* Glow Effect */}
@@ -152,14 +151,14 @@ export function Investment() {
                 ))}
               </div>
             </div>
-          </motion.div>
+          </div>
 
           {/* Metrics */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+          <div
+           
+           
+           
+           
             className="space-y-6"
           >
             {t.metrics.map((metric, index) => {
@@ -183,40 +182,40 @@ export function Investment() {
                 </div>
               );
             })}
-          </motion.div>
+          </div>
         </div>
 
         {/* Highlights */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+        <div
+         
+         
+         
+         
           className="mb-12"
         >
           <div className="grid md:grid-cols-2 gap-6">
             {t.highlights.map((highlight, index) => (
-              <motion.div
+              <div
                 key={index}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+               
+               
+               
+               
                 className="flex items-start gap-4 p-6 bg-gradient-to-br from-emerald-900/30 to-teal-900/30 border border-emerald-500/20 rounded-2xl backdrop-blur-sm"
               >
                 <CheckCircle className="w-6 h-6 text-emerald-400 flex-shrink-0 mt-1" />
                 <span className="text-slate-300 leading-relaxed">{highlight}</span>
-              </motion.div>
+              </div>
             ))}
           </div>
-        </motion.div>
+        </div>
 
         {/* CTA Button */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+        <div
+         
+         
+         
+         
           className="text-center"
         >
           <button
@@ -226,7 +225,7 @@ export function Investment() {
             <Download className="w-6 h-6 group-hover:animate-bounce" />
             <span>{t.cta}</span>
           </button>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

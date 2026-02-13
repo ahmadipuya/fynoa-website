@@ -1,6 +1,5 @@
 import { useLanguage } from './LanguageContext';
 import { Linkedin, Mail } from 'lucide-react';
-import { motion } from 'motion/react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 
 export function Team() {
@@ -107,11 +106,11 @@ export function Team() {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 z-10">
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+        <div
+         
+         
+         
+         
           className="text-center mb-20"
         >
           <h2 className="text-5xl sm:text-6xl font-black mb-6 bg-gradient-to-r from-indigo-400 via-purple-400 to-indigo-400 bg-clip-text text-transparent">
@@ -120,17 +119,17 @@ export function Team() {
           <p className="text-xl text-slate-300 max-w-3xl mx-auto">
             {t.subtitle}
           </p>
-        </motion.div>
+        </div>
 
         {/* Founders */}
         <div className="grid md:grid-cols-2 gap-12 mb-20">
           {t.founders.map((founder, index) => (
-            <motion.div
+            <div
               key={index}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
+             
+             
+             
+             
               className="group"
             >
               <div className="relative p-8 bg-gradient-to-br from-indigo-900/50 to-purple-900/50 border border-indigo-500/30 rounded-3xl backdrop-blur-sm hover:border-indigo-400/50 transition-all duration-300 overflow-hidden">
@@ -183,16 +182,16 @@ export function Team() {
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
 
         {/* Values */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+        <div
+         
+         
+         
+         
         >
           <h3 className="text-3xl font-bold text-white mb-12 text-center">
             {t.values.title}
@@ -200,12 +199,12 @@ export function Team() {
           
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {t.values.items.map((value, index) => (
-              <motion.div
+              <div
                 key={index}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+               
+               
+               
+               
                 className="p-6 bg-gradient-to-br from-indigo-900/30 to-purple-900/30 border border-indigo-500/20 rounded-2xl backdrop-blur-sm text-center"
               >
                 <h4 className="text-xl font-bold text-white mb-3">
@@ -214,10 +213,10 @@ export function Team() {
                 <p className="text-slate-400 text-sm">
                   {value.description}
                 </p>
-              </motion.div>
+              </div>
             ))}
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
