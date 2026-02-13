@@ -1,14 +1,14 @@
-import { LanguageProvider } from './src/components/LanguageContext';
-import { Navigation } from './src/components/Navigation';
-import { Hero } from './src/components/Hero';
-import { Problem } from './src/components/Problem';
-import { Solution } from './src/components/Solution';
-import { Market } from './src/components/Market';
-import { Strategy } from './src/components/Strategy';
-import { Team } from './src/components/Team';
-import { Investment } from './src/components/Investment';
-import { Contact } from './src/components/Contact';
-import { Footer } from './src/components/Footer';
+import { LanguageProvider } from './components/LanguageContext';
+import { Navigation } from './components/Navigation';
+import { Hero } from './components/Hero';
+import { Problem } from './components/Problem';
+import { Solution } from './components/Solution';
+import { Market } from './components/Market';
+import { Strategy } from './components/Strategy';
+import { Team } from './components/Team';
+import { Investment } from './components/Investment';
+import { Contact } from './components/Contact';
+import { Footer } from './components/Footer';
 
 export default function App() {
   return (
