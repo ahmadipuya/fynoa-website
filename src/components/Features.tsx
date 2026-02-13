@@ -1,4 +1,4 @@
-import { MessageSquare, Fingerprint, Smartphone, Shield, TrendingUp, Zap } from 'lucide-react';
+import { FileCheck, CreditCard, Coins, Shield, Layers, Lock } from 'lucide-react';
 
 interface FeaturesProps {
   language: 'fr' | 'en';
@@ -6,76 +6,88 @@ interface FeaturesProps {
 
 const content = {
   fr: {
-    title: "Pourquoi choisir FYNOA ?",
-    subtitle: "Une plateforme financière conçue pour la Gen Z",
-    features: [
+    businessTitle: "Modèle économique",
+    businessSubtitle: "France-first & Conforme",
+    models: [
       {
-        icon: MessageSquare,
-        title: "IA Conversationnelle",
-        description: "Posez des questions en langage naturel et obtenez des conseils financiers instantanés"
+        icon: FileCheck,
+        title: "Licensing (B2B / B2B2C)",
+        description: "Modules d'IA & banking conversationnel pour partenaires réglementés"
       },
       {
-        icon: Fingerprint,
-        title: "Authentification Biométrique",
-        description: "Sécurisez vos données avec la reconnaissance faciale et d'empreintes digitales"
+        icon: CreditCard,
+        title: "Subscription (B2C)",
+        description: "Freemium → Plans mensuels Premium"
       },
       {
-        icon: Smartphone,
-        title: "Mobile-First",
-        description: "Une expérience optimisée pour votre smartphone, disponible 24/7"
-      },
+        icon: Coins,
+        title: "Revenue Share (Sélectif)",
+        description: "Revenus basés sur transactions via institutions agréées"
+      }
+    ],
+    businessFooter: "Exécution alignée avec les exigences ACPR / AMF",
+    archTitle: "Architecture",
+    archSubtitle: "Compliance-first AI Banking Architecture",
+    architecture: [
       {
         icon: Shield,
-        title: "Sécurité Maximale",
-        description: "Vos données sont cryptées et protégées selon les normes européennes"
+        title: "Moteur bancaire conversationnel",
+        description: "Flux vocaux & chat conçus autour des contraintes ACPR/AMF"
       },
       {
-        icon: TrendingUp,
-        title: "Suivi en Temps Réel",
-        description: "Visualisez vos dépenses et économies en temps réel avec des graphiques intelligents"
+        icon: Layers,
+        title: "Stack IA modulaire",
+        description: "Modules KYC, transaction, limites & alertes pour banques & PSPs"
       },
       {
-        icon: Zap,
-        title: "Rapide & Intuitif",
-        description: "Une interface conçue pour être simple, rapide et agréable à utiliser"
+        icon: Lock,
+        title: "Confidentialité & auditabilité",
+        description: "Minimisation données, logs audit, traçabilité décisions"
       }
-    ]
+    ],
+    archFooter: "Conçu pour s'intégrer avec les institutions agréées"
   },
   en: {
-    title: "Why choose FYNOA?",
-    subtitle: "A financial platform designed for Gen Z",
-    features: [
+    businessTitle: "Business Model",
+    businessSubtitle: "France-first & Compliant",
+    models: [
       {
-        icon: MessageSquare,
-        title: "Conversational AI",
-        description: "Ask questions in natural language and get instant financial advice"
+        icon: FileCheck,
+        title: "Licensing (B2B / B2B2C)",
+        description: "AI & conversational banking modules for regulated partners"
       },
       {
-        icon: Fingerprint,
-        title: "Biometric Authentication",
-        description: "Secure your data with facial and fingerprint recognition"
+        icon: CreditCard,
+        title: "Subscription (B2C)",
+        description: "Freemium → Premium monthly plans"
       },
       {
-        icon: Smartphone,
-        title: "Mobile-First",
-        description: "An optimized experience for your smartphone, available 24/7"
-      },
+        icon: Coins,
+        title: "Revenue Share (Selective)",
+        description: "Transaction-based revenue via licensed institutions"
+      }
+    ],
+    businessFooter: "Execution aligned with ACPR / AMF requirements",
+    archTitle: "Architecture",
+    archSubtitle: "Compliance-first AI Banking Architecture",
+    architecture: [
       {
         icon: Shield,
-        title: "Maximum Security",
-        description: "Your data is encrypted and protected according to European standards"
+        title: "Conversational banking engine",
+        description: "Voice & chat flows designed around ACPR/AMF constraints"
       },
       {
-        icon: TrendingUp,
-        title: "Real-Time Tracking",
-        description: "Visualize your spending and savings in real-time with smart graphs"
+        icon: Layers,
+        title: "Modular AI stack",
+        description: "KYC, transaction, limits & alerts modules for banks & PSPs"
       },
       {
-        icon: Zap,
-        title: "Fast & Intuitive",
-        description: "An interface designed to be simple, fast, and enjoyable to use"
+        icon: Lock,
+        title: "Privacy & auditability",
+        description: "Data minimization, audit logs, decision traceability"
       }
-    ]
+    ],
+    archFooter: "Designed to integrate with licensed institutions"
   }
 };
 
@@ -83,29 +95,75 @@ export default function Features({ language }: FeaturesProps) {
   const t = content[language];
 
   return (
-    <section className="py-20 md:py-32 bg-white">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">{t.title}</h2>
-          <p className="text-xl text-gray-600">{t.subtitle}</p>
+    <section className="py-24 px-6 bg-white">
+      <div className="max-w-7xl mx-auto">
+        {/* Business Model */}
+        <div className="mb-24">
+          <div className="text-center mb-16">
+            <div className="w-2 h-20 bg-gradient-to-b from-[#ff8c00] to-[#ff6b00] rounded-full mx-auto mb-6"></div>
+            <h2 className="text-5xl md:text-6xl font-bold text-[#0a0e27] mb-4">{t.businessTitle}</h2>
+            <p className="text-xl text-[#4a5568]">{t.businessSubtitle}</p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 mb-12">
+            {t.models.map((model, index) => {
+              const Icon = model.icon;
+              const colors = [
+                'from-[#ff8c00] to-[#ff6b00]',
+                'from-[#1b9bd8] to-[#0066cc]',
+                'from-[#7dc242] to-[#6bbd45]'
+              ];
+              return (
+                <div 
+                  key={index}
+                  className="bg-[#f8fafc] rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all hover:scale-105"
+                >
+                  <div className={`w-20 h-20 rounded-2xl bg-gradient-to-br ${colors[index]} flex items-center justify-center mb-6`}>
+                    <Icon className="w-10 h-10 text-white" strokeWidth={1.5} />
+                  </div>
+                  <h3 className="text-xl font-bold text-[#0a0e27] mb-4">{model.title}</h3>
+                  <p className="text-[#4a5568] leading-relaxed">{model.description}</p>
+                </div>
+              );
+            })}
+          </div>
+
+          <div className="text-center">
+            <div className="inline-block px-8 py-4 bg-gradient-to-r from-[#1b9bd8]/10 to-[#7dc242]/10 rounded-full border border-[#1b9bd8]/20">
+              <p className="text-lg text-[#0a0e27] font-medium">{t.businessFooter}</p>
+            </div>
+          </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {t.features.map((feature, index) => {
-            const Icon = feature.icon;
-            return (
-              <div
-                key={index}
-                className="p-8 rounded-2xl bg-gradient-to-br from-gray-50 to-white border border-gray-100 hover:shadow-xl transition-all hover:scale-105"
-              >
-                <div className="w-14 h-14 bg-gradient-to-br from-[#00d4aa] to-[#0066ff] rounded-xl flex items-center justify-center mb-6">
-                  <Icon className="w-7 h-7 text-white" />
+        {/* Architecture */}
+        <div>
+          <div className="text-center mb-16">
+            <div className="w-2 h-20 bg-gradient-to-b from-[#1b9bd8] to-[#7dc242] rounded-full mx-auto mb-6"></div>
+            <h2 className="text-5xl md:text-6xl font-bold text-[#0a0e27] mb-4">{t.archTitle}</h2>
+            <p className="text-xl text-[#4a5568]">{t.archSubtitle}</p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 mb-12">
+            {t.architecture.map((arch, index) => {
+              const Icon = arch.icon;
+              return (
+                <div 
+                  key={index}
+                  className="bg-[#f8fafc] rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all border-t-4 border-[#1b9bd8] hover:scale-105"
+                >
+                  <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-[#1b9bd8] to-[#7dc242] flex items-center justify-center mb-6">
+                    <Icon className="w-8 h-8 text-white" strokeWidth={1.5} />
+                  </div>
+                  <h3 className="text-xl font-bold text-[#0a0e27] mb-4">{arch.title}</h3>
+                  <p className="text-[#4a5568] leading-relaxed">{arch.description}</p>
                 </div>
-                <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{feature.description}</p>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
+
+          <div className="text-center">
+            <p className="text-lg text-[#4a5568] italic">{t.archFooter}</p>
+          </div>
         </div>
       </div>
     </section>

@@ -1,31 +1,30 @@
-import Hero from './components/Hero';
-import Problem from './components/Problem';
-import Solution from './components/Solution';
-import Features from './components/Features';
-import Market from './components/Market';
-import Strategy from './components/Strategy';
-import Team from './components/Team';
-import Investment from './components/Investment';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
+import { LanguageProvider } from './src/components/LanguageContext';
+import { Navigation } from './src/components/Navigation';
+import { Hero } from './src/components/Hero';
+import { Problem } from './src/components/Problem';
+import { Solution } from './src/components/Solution';
+import { Market } from './src/components/Market';
+import { Strategy } from './src/components/Strategy';
+import { Team } from './src/components/Team';
+import { Investment } from './src/components/Investment';
+import { Contact } from './src/components/Contact';
+import { Footer } from './src/components/Footer';
 
-function App() {
-  const [language, setLanguage] = useState<'fr' | 'en'>('fr');
-
+export default function App() {
   return (
-    <div className="min-h-screen">
-      <Hero language={language} setLanguage={setLanguage} />
-      <Problem language={language} />
-      <Solution language={language} />
-      <Features language={language} />
-      <Market language={language} />
-      <Strategy language={language} />
-      <Team language={language} />
-      <Investment language={language} />
-      <Contact language={language} />
-      <Footer language={language} />
-    </div>
+    <LanguageProvider>
+      <div className="min-h-screen">
+        <Navigation />
+        <Hero />
+        <Problem />
+        <Solution />
+        <Market />
+        <Strategy />
+        <Team />
+        <Investment />
+        <Contact />
+        <Footer />
+      </div>
+    </LanguageProvider>
   );
 }
-
-export default App;

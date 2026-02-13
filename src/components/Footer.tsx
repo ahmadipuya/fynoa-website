@@ -1,84 +1,60 @@
-import { Mail, Linkedin, Twitter } from 'lucide-react';
+import { useLanguage } from './LanguageContext';
+import { Logo } from './Logo';
+import { Heart } from 'lucide-react';
 
-interface FooterProps {
-  language: 'fr' | 'en';
-}
+export function Footer() {
+  const { language } = useLanguage();
 
-const content = {
-  fr: {
-    tagline: "La vie, en plus malin.",
-    description: "FYNOA est une plateforme de gestion financière intelligente pour la Gen Z, propulsée par l'IA conversationnelle.",
-    contact: "Contact",
-    email: "contact@fynoa.ai",
-    legal: "© 2026 FYNOA. Tous droits réservés.",
-    note: "FYNOA n'est pas une banque et ne nécessite pas de licence bancaire à ce stade. Nous sommes une plateforme de gestion financière conforme aux réglementations européennes."
-  },
-  en: {
-    tagline: "Life, but smarter.",
-    description: "FYNOA is a smart financial management platform for Gen Z, powered by conversational AI.",
-    contact: "Contact",
-    email: "contact@fynoa.ai",
-    legal: "© 2026 FYNOA. All rights reserved.",
-    note: "FYNOA is not a bank and does not require a banking license at this stage. We are a financial management platform compliant with European regulations."
-  }
-};
+  const content = {
+    fr: {
+      tagline: "La vie, en plus malin.",
+      description: "FYNOA révolutionne la finance pour la Génération Z avec l'IA conversationnelle et la biométrie avancée.",
+      rights: "Tous droits réservés.",
+      made: "Fait avec",
+      in: "à Paris"
+    },
+    en: {
+      tagline: "Life, but smarter.",
+      description: "FYNOA is revolutionizing finance for Generation Z with conversational AI and advanced biometrics.",
+      rights: "All rights reserved.",
+      made: "Made with",
+      in: "in Paris"
+    }
+  };
 
-export default function Footer({ language }: FooterProps) {
   const t = content[language];
 
   return (
-    <footer className="bg-[#0a0e27] text-white py-16">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
+    <footer className="relative bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 border-t border-slate-800">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="grid md:grid-cols-2 gap-12 mb-12">
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-12 h-12 bg-gradient-to-br from-[#00d4aa] to-[#0066ff] rounded-xl flex items-center justify-center text-2xl font-bold">
-                F
-              </div>
-              <span className="text-2xl font-bold">FYNOA</span>
-            </div>
-            <p className="text-[#00d4aa] mb-4 font-medium">{t.tagline}</p>
-            <p className="text-gray-400 mb-6">{t.description}</p>
-            <div className="flex gap-4">
-              <a
-                href="#"
-                className="w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-all"
-              >
-                <Linkedin className="w-5 h-5" />
-              </a>
-              <a
-                href="#"
-                className="w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-all"
-              >
-                <Twitter className="w-5 h-5" />
-              </a>
-              <a
-                href="mailto:contact@fynoa.ai"
-                className="w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-all"
-              >
-                <Mail className="w-5 h-5" />
-              </a>
-            </div>
+            <Logo className="w-40 h-10 mb-6" />
+            <p className="text-sm text-slate-500 italic mb-4">{t.tagline}</p>
+            <p className="text-slate-400 leading-relaxed max-w-md">
+              {t.description}
+            </p>
           </div>
 
           {/* Contact */}
-          <div>
-            <h4 className="font-bold text-lg mb-4">{t.contact}</h4>
-            <a
-              href="mailto:contact@fynoa.ai"
-              className="text-gray-400 hover:text-[#00d4aa] transition-colors flex items-center gap-2"
-            >
-              <Mail className="w-5 h-5" />
-              {t.email}
-            </a>
+          <div className="md:text-right">
+            <h3 className="text-white font-bold text-lg mb-4">Contact</h3>
+            <div className="space-y-2 text-slate-400">
+              <p>hello@fynoa.ai</p>
+              <p>Paris, France</p>
+            </div>
           </div>
         </div>
 
-        {/* Legal note */}
-        <div className="border-t border-white/10 pt-8">
-          <p className="text-sm text-gray-500 mb-4">{t.note}</p>
-          <p className="text-sm text-gray-500">{t.legal}</p>
+        {/* Bottom */}
+        <div className="pt-8 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-slate-500 text-sm">
+            © 2025 FYNOA. {t.rights}
+          </p>
+          <p className="text-slate-500 text-sm flex items-center gap-2">
+            {t.made} <Heart className="w-4 h-4 text-red-500 fill-red-500" /> {t.in}
+          </p>
         </div>
       </div>
     </footer>
