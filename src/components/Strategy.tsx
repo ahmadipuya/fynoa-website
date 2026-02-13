@@ -1,86 +1,133 @@
 import { useLanguage } from './LanguageContext';
-import { TrendingUp, Users, Globe, Target } from 'lucide-react';
-import { motion } from 'motion/react';
+import { Rocket, Users, Globe2, TrendingUp, CheckCircle } from 'lucide-react';
 
-export function Market() {
+export function Strategy() {
   const { language } = useLanguage();
 
   const content = {
     fr: {
-      title: "Le Marché",
-      subtitle: "Un potentiel de croissance massif dans la fintech Gen Z",
-      stats: [
+      title: "Stratégie de Croissance",
+      subtitle: "Un plan ambitieux pour conquérir le marché européen",
+      phases: [
         {
+          phase: "Phase 1",
+          title: "Lancement MVP",
+          timeline: "Q1 2025",
+          icon: Rocket,
+          objectives: [
+            "Développement de la plateforme core",
+            "Intégration de l'IA conversationnelle",
+            "Authentification biométrique",
+            "Beta test avec 1000 utilisateurs"
+          ]
+        },
+        {
+          phase: "Phase 2",
+          title: "Expansion France",
+          timeline: "Q2-Q4 2025",
           icon: Users,
-          value: "2.5Md",
-          label: "Génération Z dans le monde",
-          description: "Le segment démographique le plus important"
+          objectives: [
+            "Lancement public en France",
+            "Partenariats avec universités",
+            "100K utilisateurs actifs",
+            "Monétisation premium"
+          ]
         },
         {
+          phase: "Phase 3",
+          title: "Europe",
+          timeline: "2026",
+          icon: Globe2,
+          objectives: [
+            "Expansion Allemagne, Espagne, Italie",
+            "Localisation multilingue",
+            "1M+ utilisateurs",
+            "Série A fundraising"
+          ]
+        },
+        {
+          phase: "Phase 4",
+          title: "Leadership",
+          timeline: "2027+",
           icon: TrendingUp,
-          value: "$360Md",
-          label: "Marché de la fintech en 2024",
-          description: "Croissance annuelle de 25%"
-        },
-        {
-          icon: Globe,
-          value: "15M+",
-          label: "Gen Z en France",
-          description: "Notre marché cible initial"
-        },
-        {
-          icon: Target,
-          value: "€150/mois",
-          label: "Revenu mensuel moyen",
-          description: "Potentiel ARPU important"
+          objectives: [
+            "Leader européen fintech Gen Z",
+            "10M+ utilisateurs",
+            "Rentabilité opérationnelle",
+            "Innovation continue IA"
+          ]
         }
       ],
-      opportunity: {
-        title: "L'Opportunité",
-        points: [
-          "La Gen Z représente 32% de la population mondiale",
-          "98% possèdent un smartphone",
-          "70% préfèrent les applications mobiles aux banques traditionnelles",
-          "Marché français de la fintech en croissance de 40% par an"
+      businessModel: {
+        title: "Modèle de Revenus",
+        streams: [
+          "Abonnement Premium: €4.99/mois - Fonctionnalités IA avancées",
+          "Interchange fees: Commission sur transactions",
+          "Partenariats: Offres exclusives brands Gen Z",
+          "API Platform: Services B2B pour entreprises"
         ]
       }
     },
     en: {
-      title: "The Market",
-      subtitle: "Massive growth potential in Gen Z fintech",
-      stats: [
+      title: "Growth Strategy",
+      subtitle: "An ambitious plan to conquer the European market",
+      phases: [
         {
+          phase: "Phase 1",
+          title: "MVP Launch",
+          timeline: "Q1 2025",
+          icon: Rocket,
+          objectives: [
+            "Core platform development",
+            "Conversational AI integration",
+            "Biometric authentication",
+            "Beta test with 1000 users"
+          ]
+        },
+        {
+          phase: "Phase 2",
+          title: "France Expansion",
+          timeline: "Q2-Q4 2025",
           icon: Users,
-          value: "2.5B",
-          label: "Generation Z worldwide",
-          description: "The largest demographic segment"
+          objectives: [
+            "Public launch in France",
+            "University partnerships",
+            "100K active users",
+            "Premium monetization"
+          ]
         },
         {
+          phase: "Phase 3",
+          title: "Europe",
+          timeline: "2026",
+          icon: Globe2,
+          objectives: [
+            "Expansion Germany, Spain, Italy",
+            "Multilingual localization",
+            "1M+ users",
+            "Series A fundraising"
+          ]
+        },
+        {
+          phase: "Phase 4",
+          title: "Leadership",
+          timeline: "2027+",
           icon: TrendingUp,
-          value: "$360B",
-          label: "Fintech market in 2024",
-          description: "25% annual growth"
-        },
-        {
-          icon: Globe,
-          value: "15M+",
-          label: "Gen Z in France",
-          description: "Our initial target market"
-        },
-        {
-          icon: Target,
-          value: "€150/mo",
-          label: "Average monthly revenue",
-          description: "Significant ARPU potential"
+          objectives: [
+            "European Gen Z fintech leader",
+            "10M+ users",
+            "Operational profitability",
+            "Continuous AI innovation"
+          ]
         }
       ],
-      opportunity: {
-        title: "The Opportunity",
-        points: [
-          "Gen Z represents 32% of the global population",
-          "98% own a smartphone",
-          "70% prefer mobile apps over traditional banks",
-          "French fintech market growing 40% annually"
+      businessModel: {
+        title: "Revenue Model",
+        streams: [
+          "Premium Subscription: €4.99/month - Advanced AI features",
+          "Interchange fees: Transaction commissions",
+          "Partnerships: Exclusive Gen Z brand offers",
+          "API Platform: B2B services for companies"
         ]
       }
     }
@@ -89,99 +136,102 @@ export function Market() {
   const t = content[language];
 
   return (
-    <section id="market" className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-emerald-950 via-teal-950 to-emerald-950 overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#10b98120_1px,transparent_1px),linear-gradient(to_bottom,#10b98120_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
+    <section id="strategy" className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-950 via-purple-950 to-slate-950 overflow-hidden">
+      {/* Background Effects */}
+      <div className="absolute inset-0">
+        <div className="absolute top-1/3 left-1/3 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-1/3 right-1/3 w-96 h-96 bg-pink-500/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
+      </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 z-10">
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-20"
-        >
-          <h2 className="text-5xl sm:text-6xl font-black mb-6 bg-gradient-to-r from-emerald-400 via-teal-400 to-emerald-400 bg-clip-text text-transparent">
+        <div className="text-center mb-20">
+          <h2 className="text-5xl sm:text-6xl font-black mb-6 bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400 bg-clip-text text-transparent">
             {t.title}
           </h2>
           <p className="text-xl text-slate-300 max-w-3xl mx-auto">
             {t.subtitle}
           </p>
-        </motion.div>
-
-        {/* Stats Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
-          {t.stats.map((stat, index) => {
-            const Icon = stat.icon;
-            return (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="group"
-              >
-                <div className="relative p-8 bg-gradient-to-br from-emerald-900/50 to-teal-900/50 border border-emerald-500/30 rounded-3xl backdrop-blur-sm hover:border-emerald-400/50 transition-all duration-300 overflow-hidden">
-                  {/* Glow Effect */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/0 to-teal-500/0 group-hover:from-emerald-500/10 group-hover:to-teal-500/10 transition-all duration-500"></div>
-                  
-                  <div className="relative z-10 text-center">
-                    {/* Icon */}
-                    <div className="mb-4 inline-flex p-3 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-2xl shadow-lg shadow-emerald-500/50 transform group-hover:scale-110 transition-transform duration-300">
-                      <Icon className="w-6 h-6 text-white" />
-                    </div>
-
-                    {/* Value */}
-                    <div className="text-4xl font-black text-white mb-2">
-                      {stat.value}
-                    </div>
-
-                    {/* Label */}
-                    <div className="text-emerald-300 font-semibold mb-2">
-                      {stat.label}
-                    </div>
-
-                    {/* Description */}
-                    <div className="text-sm text-slate-400">
-                      {stat.description}
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            );
-          })}
         </div>
 
-        {/* Opportunity Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="relative p-12 bg-gradient-to-br from-emerald-900/30 to-teal-900/30 border border-emerald-500/30 rounded-3xl backdrop-blur-sm"
+        {/* Timeline */}
+        <div className="relative mb-20">
+          {/* Vertical Line */}
+          <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-purple-500 via-pink-500 to-purple-500 hidden lg:block"></div>
+
+          <div className="space-y-16">
+            {t.phases.map((phase, index) => {
+              const Icon = phase.icon;
+              const isEven = index % 2 === 0;
+              
+              return (
+                <div
+                  key={index}
+                  className={`relative flex items-center ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} flex-col gap-8`}
+                >
+                  {/* Content Card */}
+                  <div className="lg:w-5/12 w-full">
+                    <div className="p-8 bg-gradient-to-br from-purple-900/50 to-pink-900/50 border border-purple-500/30 rounded-3xl backdrop-blur-sm hover:border-purple-400/50 transition-all duration-300">
+                      <div className="flex items-center gap-4 mb-4">
+                        <div className="p-3 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl shadow-lg shadow-purple-500/50">
+                          <Icon className="w-6 h-6 text-white" />
+                        </div>
+                        <div>
+                          <div className="text-sm text-purple-300 font-semibold">{phase.phase}</div>
+                          <div className="text-2xl font-bold text-white">{phase.title}</div>
+                        </div>
+                      </div>
+                      
+                      <div className="inline-block px-4 py-1 bg-purple-500/20 border border-purple-500/30 rounded-full text-purple-300 text-sm font-semibold mb-4">
+                        {phase.timeline}
+                      </div>
+
+                      <div className="space-y-3">
+                        {phase.objectives.map((objective, idx) => (
+                          <div key={idx} className="flex items-start gap-3">
+                            <CheckCircle className="w-5 h-5 text-purple-400 flex-shrink-0 mt-0.5" />
+                            <span className="text-slate-300">{objective}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Center Circle (Desktop) */}
+                  <div className="hidden lg:flex absolute left-1/2 -translate-x-1/2 w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full items-center justify-center shadow-xl shadow-purple-500/50 border-4 border-slate-950">
+                    <div className="text-2xl font-black text-white">{index + 1}</div>
+                  </div>
+
+                  {/* Spacer */}
+                  <div className="lg:w-5/12 hidden lg:block"></div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* Business Model */}
+        <div
+          className="relative p-12 bg-gradient-to-br from-purple-900/30 to-pink-900/30 border border-purple-500/30 rounded-3xl backdrop-blur-sm"
         >
           <h3 className="text-3xl font-bold text-white mb-8 text-center">
-            {t.opportunity.title}
+            {t.businessModel.title}
           </h3>
           
           <div className="grid md:grid-cols-2 gap-6">
-            {t.opportunity.points.map((point, index) => (
-              <motion.div
+            {t.businessModel.streams.map((stream, index) => (
+              <div
                 key={index}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="flex items-start gap-4"
+                className="p-6 bg-gradient-to-br from-purple-800/30 to-pink-800/30 border border-purple-500/20 rounded-2xl"
               >
-                <div className="flex-shrink-0 w-2 h-2 mt-2 bg-gradient-to-br from-emerald-400 to-teal-400 rounded-full"></div>
-                <p className="text-slate-300 leading-relaxed">{point}</p>
-              </motion.div>
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0 w-2 h-2 mt-2 bg-gradient-to-br from-purple-400 to-pink-400 rounded-full"></div>
+                  <p className="text-slate-300 leading-relaxed">{stream}</p>
+                </div>
+              </div>
             ))}
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

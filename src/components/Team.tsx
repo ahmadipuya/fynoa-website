@@ -106,13 +106,7 @@ export function Team() {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 z-10">
         {/* Header */}
-        <div
-         
-         
-         
-         
-          className="text-center mb-20"
-        >
+        <div className="text-center mb-20">
           <h2 className="text-5xl sm:text-6xl font-black mb-6 bg-gradient-to-r from-indigo-400 via-purple-400 to-indigo-400 bg-clip-text text-transparent">
             {t.title}
           </h2>
@@ -124,14 +118,7 @@ export function Team() {
         {/* Founders */}
         <div className="grid md:grid-cols-2 gap-12 mb-20">
           {t.founders.map((founder, index) => (
-            <div
-              key={index}
-             
-             
-             
-             
-              className="group"
-            >
+            <div key={index} className="group">
               <div className="relative p-8 bg-gradient-to-br from-indigo-900/50 to-purple-900/50 border border-indigo-500/30 rounded-3xl backdrop-blur-sm hover:border-indigo-400/50 transition-all duration-300 overflow-hidden">
                 {/* Glow Effect */}
                 <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/0 to-purple-500/0 group-hover:from-indigo-500/10 group-hover:to-purple-500/10 transition-all duration-500"></div>
@@ -187,12 +174,7 @@ export function Team() {
         </div>
 
         {/* Values */}
-        <div
-         
-         
-         
-         
-        >
+        <div>
           <h3 className="text-3xl font-bold text-white mb-12 text-center">
             {t.values.title}
           </h3>
@@ -201,10 +183,6 @@ export function Team() {
             {t.values.items.map((value, index) => (
               <div
                 key={index}
-               
-               
-               
-               
                 className="p-6 bg-gradient-to-br from-indigo-900/30 to-purple-900/30 border border-indigo-500/20 rounded-2xl backdrop-blur-sm text-center"
               >
                 <h4 className="text-xl font-bold text-white mb-3">

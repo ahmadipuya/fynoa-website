@@ -1,6 +1,5 @@
 import { useLanguage } from './LanguageContext';
 import { TrendingUp, Users, Globe, Target } from 'lucide-react';
-import { motion } from 'motion/react';
 
 export function Market() {
   const { language } = useLanguage();
@@ -95,34 +94,21 @@ export function Market() {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 z-10">
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-20"
-        >
+        <div className="text-center mb-20">
           <h2 className="text-5xl sm:text-6xl font-black mb-6 bg-gradient-to-r from-emerald-400 via-teal-400 to-emerald-400 bg-clip-text text-transparent">
             {t.title}
           </h2>
           <p className="text-xl text-slate-300 max-w-3xl mx-auto">
             {t.subtitle}
           </p>
-        </motion.div>
+        </div>
 
         {/* Stats Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
           {t.stats.map((stat, index) => {
             const Icon = stat.icon;
             return (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="group"
-              >
+              <div key={index} className="group">
                 <div className="relative p-8 bg-gradient-to-br from-emerald-900/50 to-teal-900/50 border border-emerald-500/30 rounded-3xl backdrop-blur-sm hover:border-emerald-400/50 transition-all duration-300 overflow-hidden">
                   {/* Glow Effect */}
                   <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/0 to-teal-500/0 group-hover:from-emerald-500/10 group-hover:to-teal-500/10 transition-all duration-500"></div>
@@ -149,39 +135,26 @@ export function Market() {
                     </div>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             );
           })}
         </div>
 
         {/* Opportunity Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="relative p-12 bg-gradient-to-br from-emerald-900/30 to-teal-900/30 border border-emerald-500/30 rounded-3xl backdrop-blur-sm"
-        >
+        <div className="relative p-12 bg-gradient-to-br from-emerald-900/30 to-teal-900/30 border border-emerald-500/30 rounded-3xl backdrop-blur-sm">
           <h3 className="text-3xl font-bold text-white mb-8 text-center">
             {t.opportunity.title}
           </h3>
           
           <div className="grid md:grid-cols-2 gap-6">
             {t.opportunity.points.map((point, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="flex items-start gap-4"
-              >
+              <div key={index} className="flex items-start gap-4">
                 <div className="flex-shrink-0 w-2 h-2 mt-2 bg-gradient-to-br from-emerald-400 to-teal-400 rounded-full"></div>
                 <p className="text-slate-300 leading-relaxed">{point}</p>
-              </motion.div>
+              </div>
             ))}
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

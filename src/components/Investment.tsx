@@ -87,25 +87,18 @@ export function Investment() {
 
   const t = content[language];
 
-  const handleDownload = () => {
-    window.open('https://github.com/ahmadipuya/fynoa-website/raw/main/FYNOA%20-%20Pitch%20Deck.pdf', '_blank');
-  };
-
   return (
-    <section id="investment" className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-emerald-950 via-teal-950 to-emerald-950 overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,#10b98120,transparent_50%)]"></div>
+    <section id="investment" className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-950 via-amber-950 to-slate-950 overflow-hidden">
+      {/* Background */}
+      <div className="absolute inset-0">
+        <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-amber-500/20 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-1/4 left-1/4 w-96 h-96 bg-yellow-500/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
+      </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 z-10">
         {/* Header */}
-        <div
-         
-         
-         
-         
-          className="text-center mb-20"
-        >
-          <h2 className="text-5xl sm:text-6xl font-black mb-6 bg-gradient-to-r from-emerald-400 via-teal-400 to-emerald-400 bg-clip-text text-transparent">
+        <div className="text-center mb-20">
+          <h2 className="text-5xl sm:text-6xl font-black mb-6 bg-gradient-to-r from-amber-400 via-yellow-400 to-amber-400 bg-clip-text text-transparent">
             {t.title}
           </h2>
           <p className="text-xl text-slate-300 max-w-3xl mx-auto">
@@ -113,116 +106,81 @@ export function Investment() {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 mb-16">
-          {/* Fundraising Card */}
-          <div
-           
-           
-           
-           
-            className="relative p-10 bg-gradient-to-br from-emerald-900/50 to-teal-900/50 border border-emerald-500/30 rounded-3xl backdrop-blur-sm overflow-hidden"
-          >
-            {/* Glow Effect */}
-            <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/10 to-teal-500/10"></div>
-            
-            <div className="relative z-10">
-              <h3 className="text-3xl font-bold text-white mb-4">
-                {t.fundraising.title}
-              </h3>
-              
-              <div className="mb-6">
-                <div className="text-6xl font-black bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent mb-2">
-                  {t.fundraising.amount}
-                </div>
-                <p className="text-slate-300">
-                  {t.fundraising.description}
-                </p>
-              </div>
+        <div className="grid lg:grid-cols-2 gap-12 mb-12">
+          {/* Fundraising Info */}
+          <div className="p-8 bg-gradient-to-br from-amber-900/50 to-yellow-900/50 border border-amber-500/30 rounded-3xl backdrop-blur-sm">
+            <h3 className="text-3xl font-bold text-white mb-4">
+              {t.fundraising.title}
+            </h3>
+            <div className="text-6xl font-black text-amber-400 mb-4">
+              {t.fundraising.amount}
+            </div>
+            <p className="text-slate-300 mb-8 text-lg">
+              {t.fundraising.description}
+            </p>
 
-              <div className="space-y-3">
-                <div className="text-lg font-semibold text-emerald-300 mb-3">
-                  {language === 'fr' ? 'Utilisation des fonds:' : 'Use of funds:'}
+            <div className="space-y-4">
+              {t.fundraising.use.map((item, index) => (
+                <div
+                  key={index}
+                  className="flex items-start gap-3 p-4 bg-amber-900/30 border border-amber-500/20 rounded-xl"
+                >
+                  <CheckCircle className="w-5 h-5 text-amber-400 flex-shrink-0 mt-0.5" />
+                  <span className="text-slate-300">{item}</span>
                 </div>
-                {t.fundraising.use.map((item, index) => (
-                  <div key={index} className="flex items-center gap-3">
-                    <div className="w-2 h-2 bg-gradient-to-r from-emerald-400 to-teal-400 rounded-full"></div>
-                    <span className="text-slate-300">{item}</span>
+              ))}
+            </div>
+          </div>
+
+          {/* Metrics & Highlights */}
+          <div className="space-y-6">
+            {/* Metrics */}
+            <div className="grid grid-cols-3 gap-4">
+              {t.metrics.map((metric, index) => {
+                const Icon = metric.icon;
+                return (
+                  <div
+                    key={index}
+                    className="p-6 bg-gradient-to-br from-amber-900/50 to-yellow-900/50 border border-amber-500/30 rounded-2xl backdrop-blur-sm text-center"
+                  >
+                    <div className="mb-3 inline-flex p-3 bg-gradient-to-br from-amber-500 to-yellow-500 rounded-xl shadow-lg shadow-amber-500/50">
+                      <Icon className="w-5 h-5 text-white" />
+                    </div>
+                    <div className="text-3xl font-black text-white mb-2">
+                      {metric.value}
+                    </div>
+                    <div className="text-xs text-amber-300">
+                      {metric.label}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+
+            {/* Highlights */}
+            <div className="p-8 bg-gradient-to-br from-amber-900/30 to-yellow-900/30 border border-amber-500/20 rounded-3xl backdrop-blur-sm">
+              <h4 className="text-2xl font-bold text-white mb-6">Highlights</h4>
+              <div className="space-y-4">
+                {t.highlights.map((highlight, index) => (
+                  <div
+                    key={index}
+                    className="flex items-start gap-3"
+                  >
+                    <div className="flex-shrink-0 w-2 h-2 mt-2 bg-gradient-to-br from-amber-400 to-yellow-400 rounded-full"></div>
+                    <p className="text-slate-300 leading-relaxed">{highlight}</p>
                   </div>
                 ))}
               </div>
             </div>
           </div>
-
-          {/* Metrics */}
-          <div
-           
-           
-           
-           
-            className="space-y-6"
-          >
-            {t.metrics.map((metric, index) => {
-              const Icon = metric.icon;
-              return (
-                <div
-                  key={index}
-                  className="p-6 bg-gradient-to-br from-emerald-900/50 to-teal-900/50 border border-emerald-500/30 rounded-2xl backdrop-blur-sm"
-                >
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-4">
-                      <div className="p-3 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-xl shadow-lg shadow-emerald-500/50">
-                        <Icon className="w-6 h-6 text-white" />
-                      </div>
-                      <div>
-                        <div className="text-sm text-slate-400 mb-1">{metric.label}</div>
-                        <div className="text-3xl font-black text-white">{metric.value}</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
         </div>
 
-        {/* Highlights */}
-        <div
-         
-         
-         
-         
-          className="mb-12"
-        >
-          <div className="grid md:grid-cols-2 gap-6">
-            {t.highlights.map((highlight, index) => (
-              <div
-                key={index}
-               
-               
-               
-               
-                className="flex items-start gap-4 p-6 bg-gradient-to-br from-emerald-900/30 to-teal-900/30 border border-emerald-500/20 rounded-2xl backdrop-blur-sm"
-              >
-                <CheckCircle className="w-6 h-6 text-emerald-400 flex-shrink-0 mt-1" />
-                <span className="text-slate-300 leading-relaxed">{highlight}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* CTA Button */}
-        <div
-         
-         
-         
-         
-          className="text-center"
-        >
+        {/* CTA */}
+        <div className="text-center">
           <button
-            onClick={handleDownload}
-            className="group inline-flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-bold text-lg rounded-full shadow-2xl shadow-emerald-500/50 hover:shadow-emerald-500/70 hover:scale-105 transition-all duration-300"
+            className="inline-flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-amber-400 hover:to-yellow-400 text-slate-950 font-black text-xl rounded-2xl shadow-2xl shadow-amber-500/50 transition-all duration-300 transform hover:scale-105"
           >
-            <Download className="w-6 h-6 group-hover:animate-bounce" />
+            <Download className="w-6 h-6" />
             <span>{t.cta}</span>
           </button>
         </div>
