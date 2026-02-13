@@ -1,39 +1,12 @@
-export default function Logo({ className = "w-48 h-48" }: { className?: string }) {
+export function Logo({ className = "w-40 h-10" }: { className?: string }) {
   return (
-    <svg 
-      viewBox="0 0 200 200" 
-      className={className}
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      {/* Background Circle */}
-      <circle cx="100" cy="100" r="90" fill="url(#logo-gradient)" />
-      
-      {/* Gradient Definition */}
-      <defs>
-        <linearGradient id="logo-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" style={{ stopColor: '#1b9bd8', stopOpacity: 1 }} />
-          <stop offset="50%" style={{ stopColor: '#7dc242', stopOpacity: 1 }} />
-          <stop offset="100%" style={{ stopColor: '#ff8c00', stopOpacity: 1 }} />
-        </linearGradient>
-        
-        <linearGradient id="text-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" style={{ stopColor: '#ffffff', stopOpacity: 1 }} />
-          <stop offset="100%" style={{ stopColor: '#f0f0f0', stopOpacity: 1 }} />
-        </linearGradient>
-      </defs>
-      
-      {/* F Letter */}
-      <text
-        x="100"
-        y="135"
-        fontSize="120"
-        fontWeight="900"
-        textAnchor="middle"
-        fill="url(#text-gradient)"
-        fontFamily="system-ui, -apple-system, sans-serif"
-      >
-        F
-      </text>
-    </svg>
+    <div className={`flex items-center gap-2 ${className}`}>
+      <div className="w-10 h-10 bg-gradient-to-br from-sky-500 to-emerald-500 rounded-xl flex items-center justify-center shadow-lg shadow-sky-500/50">
+        <span className="text-xl font-black text-white">F</span>
+      </div>
+      <span className="text-2xl font-black bg-gradient-to-r from-sky-400 to-emerald-400 bg-clip-text text-transparent">
+        FYNOA
+      </span>
+    </div>
   );
 }
