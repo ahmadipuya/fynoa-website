@@ -1,18 +1,33 @@
-import { useLanguage } from './LanguageContext';
-import { Globe } from 'lucide-react';
+import { createContext, useContext, useState, ReactNode } from 'react';
 
-export function LanguageToggle() {
-  const { language, setLanguage } = useLanguage();
+type Language = 'fr' | 'en';
+
+interface LanguageContextType {
+  language: Language;
+  setLanguage: (lang: Language) => void;
+  t: (fr: string, en: string) => string;
+}
+
+const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
+
+export function LanguageProvider({ children }: { children: ReactNode }) {
+  const [language, setLanguage] = useState<Language>('fr');
+
+  const t = (fr: string, en: string) => {
+    return language === 'fr' ? fr : en;
+  };
 
   return (
-    <button
-      onClick={() => setLanguage(language === 'fr' ? 'en' : 'fr')}
-      className="flex items-center gap-2 px-4 py-2 bg-slate-800/50 hover:bg-slate-700/50 rounded-xl transition-all border border-slate-700/50 hover:border-sky-500/50"
-    >
-      <Globe className="w-4 h-4 text-sky-400" />
-      <span className="text-sm font-semibold text-slate-300">
-        {language === 'fr' ? 'EN' : 'FR'}
-      </span>
-    </button>
+    <LanguageContext.Provider value={{ language, setLanguage, t }}>
+      {children}
+    </LanguageContext.Provider>
   );
+}
+
+export function useLanguage() {
+  const context = useContext(LanguageContext);
+  if (context === undefined) {
+    throw new Error('useLanguage must be used within a LanguageProvider');
+  }
+  return context;
 }
